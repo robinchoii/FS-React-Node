@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 
-var CommentSchema = new Mongoose.Schema({
+var CommentSchema = new mongoose.Schema({
 
     username: {type: String, default: ''},
 
