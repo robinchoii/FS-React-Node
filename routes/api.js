@@ -59,10 +59,45 @@ router.get('/:resource/:id', function(req, res, next) {
 
                     confirmation: 'fail',
 
-                    message: err
+                    message: 'Not Found'
 
                 })
                 return
+            }
+
+            res.json({
+
+                confirmation: 'success',
+
+                result: result
+            })
+
+        })
+
+    }
+
+})
+
+router.post('/:resource', function(req, res, next) {
+
+    var resource = req.params.resource
+    console.log(resource)
+
+    if(resource == 'zone') {
+
+        ZoneController.create(req.body, function(err, result) {
+
+            if(err) {
+
+                res.json( {
+
+                    confirmation: 'fail',
+
+                    message: err
+                })
+
+                return
+
             }
 
             res.json({
