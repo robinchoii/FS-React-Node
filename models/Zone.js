@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 
-var ZoneSchema = new Mongoose.Schema({
+var ZoneSchema = new mongoose.Schema({
 
     name: {type:String, default:''},
 
